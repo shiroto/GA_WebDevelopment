@@ -2,6 +2,7 @@ import { Entity } from "./entity.js";
 
 const SPEED = 2;
 
+// Simple enemy that goes from right to left and dies on any impact.
 export class BasicEnemy extends Entity {
     constructor(ticker, parent, position, sprite, bounds) {
         super(ticker, parent, position, sprite);

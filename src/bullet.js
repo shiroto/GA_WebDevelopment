@@ -2,6 +2,7 @@ import { Entity } from "./entity.js";
 
 const SPEED = 10;
 
+// Bullet shot by the player. Dies on impact.
 export class Bullet extends Entity {
     constructor(ticker, parent, position, sprite, bounds) {
         super(ticker, parent, position, sprite);

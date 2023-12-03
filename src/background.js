@@ -1,3 +1,4 @@
+// Load and show background of stars.
 export class Background {
     constructor(parent) {
         this.parent = parent;

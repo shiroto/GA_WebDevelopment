@@ -1,3 +1,4 @@
+// Simple implementation of physics objects. All entities are considered to be circular.
 export class CollisionSystem {
     constructor(ticker) {
         ticker.add((delta) => this._update(delta));

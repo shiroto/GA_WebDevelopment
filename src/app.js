@@ -1,3 +1,5 @@
+// Entry point of the application.
+
 import { Background } from './background.js';
 import { Player } from './player.js';
 import { InputHandler } from './inputHandler.js';
@@ -5,6 +7,7 @@ import { BulletFactory } from './bulletFactory.js';
 import { CollisionSystem } from './collisionSystem.js';
 import { EnemySpawner } from './enemySpawner.js';
 
+// Window bounds
 const BOUNDS = vec4.fromValues(0, 0, 1280, 800);
 
 async function _loadShipSpriteSheet() {
@@ -32,13 +35,18 @@ function _initEnemySpawner() {
     const level1Spawner = new EnemySpawner(app.ticker, app.stage, BOUNDS, collisionSystem, "ENDLESS");
 }
 
+// Start game logic ->
+
+// Init Pixi application
 const app = new PIXI.Application({
     background: '#1099bb',
     width: BOUNDS[2],
     height: BOUNDS[3]
 });
+// Add to webpage
 document.body.appendChild(app.view);
 
+// Init game
 const input = new InputHandler(window);
 const collisionSystem = new CollisionSystem(app.ticker);
 await _loadShipSpriteSheet();

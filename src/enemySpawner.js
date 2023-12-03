@@ -28,6 +28,7 @@ class EnemyFactory {
 
 const SPAWN_X = 1.1;
 
+// Spawns enemies. Must be initialized with a valid level (see Levels).
 export class EnemySpawner {
     constructor(ticker, parent, bounds, collisionSystem, level) {
         ticker.add((delta) => this._update(delta));
@@ -48,7 +49,9 @@ export class EnemySpawner {
     }
 }
 
+// Data for different levels.
 class Levels {
+    // Endless amount of basic enemies.
     static ENDLESS = {
         frequency: 100,
         yMin: 0.1,
@@ -59,6 +62,7 @@ class Levels {
         }
     }
 
+    // A fixed set of enemies.
     static LEVEL_1 = {
         enemies: [
             new SpawnInfo(200, "BasicEnemy", vec2.fromValues(SPAWN_X, 0.5)),

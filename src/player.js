@@ -12,13 +12,14 @@ const BUTTONS = {
     FIRE: 'Space'
 };
 
+// Player entity. Reacts to inputs. Coolides with enemies but cannot be destroyed.
 export class Player extends Entity {
     constructor(ticker, parent, position, sprite, input, bounds, bulletFactory) {
         super(ticker, parent, position, sprite);
         this.input = input;
         this.bounds = bounds;
         this.bulletFactory = bulletFactory;
-        this.velocity = vec2.create();
+        this.velocity = vec2.create(); // vec2 comes from the GL-Matrix library; used for better vector functions
         this.lastFire = 0;
         this.radius = RADIUS
     }
@@ -35,10 +36,10 @@ export class Player extends Entity {
 
     _processMovement(delta) {
         const inputVector = this._getInputVector();
-        const accel = vec2.create();
+        const target_velocity = vec2.create();
         vec2.normalize(inputVector, inputVector);
-        vec2.scale(accel, inputVector, MAX_SPEED);
-        this._moveTowards(this.velocity, accel, ACCELERATION * delta);
+        vec2.scale(target_velocity, inputVector, MAX_SPEED);
+        this._moveTowards(this.velocity, target_velocity, ACCELERATION * delta);
         this._checkBounds();
         this.sprite.x += this.velocity[0];
         this.sprite.y += this.velocity[1];
@@ -68,6 +69,7 @@ export class Player extends Entity {
         }
     }
 
+    // Interpolates from current velocity to target velocity to simulate intertia.
     _moveTowards(current, target, maxChange) {
         const direction = vec2.subtract(vec2.create(), target, current);
         const distance = vec2.length(direction);
@@ -80,6 +82,7 @@ export class Player extends Entity {
         }
     }
 
+    // Prevent the player from leaving the screen.
     _checkBounds() {
         const pos = this.getPosition();
         if (pos[0] - this.radius < this.bounds[0] && this.velocity[0] < 0) {

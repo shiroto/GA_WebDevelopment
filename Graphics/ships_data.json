@@ -1,0 +1,36 @@
+{"frames": {
+
+"bullet1.png":
+{
+	"frame": {"x":0,"y":0,"w":46,"h":28},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":28},
+	"sourceSize": {"w":46,"h":28}
+},
+"enemy1.png":
+{
+	"frame": {"x":0,"y":28,"w":20,"h":21},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":21},
+	"sourceSize": {"w":20,"h":21}
+},
+"ship1.png":
+{
+	"frame": {"x":20,"y":28,"w":34,"h":35},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":35},
+	"sourceSize": {"w":34,"h":35}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.1",
+	"image": "ships_data.png",
+	"format": "RGBA8888",
+	"size": {"w":54,"h":63},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:a3b14d5ca8d762bd73501d3375d670ab:444f0e06ee0ffbeba2e8de5df571c16b:69fc6a1a338ede3da10e62987e5c45e5$"
+}
+}

@@ -9,8 +9,8 @@ const BOUNDS = vec4.fromValues(0, 0, 1280, 800);
 
 async function _loadShipSpriteSheet() {
     await PIXI.Assets.load([
-        '/Graphics/ships_data.json',
-        '/Graphics/ships_data.png'
+        'Graphics/ships_data.json',
+        'Graphics/ships_data.png'
     ]);
 }
 

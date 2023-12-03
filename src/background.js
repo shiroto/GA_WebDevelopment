@@ -4,7 +4,7 @@ export class Background {
     }
 
     async load(loader) {
-        const tex = await loader.load('/Graphics/background.png');
+        const tex = await loader.load('Graphics/background.png');
         this.texWidth = tex.width;
         this.bg = [new PIXI.Sprite(tex), new PIXI.Sprite(tex), new PIXI.Sprite(tex)];
         this.bg[1].x += this.texWidth;

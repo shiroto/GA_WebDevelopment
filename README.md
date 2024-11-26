@@ -1,9 +1,10 @@
-# GA_Web_Development
-Project for the course "Web Development" at Games Academy
+# Web Advanced
+Project for lecture at Games Academy.
 
 # How to build
-1. Install webpack with
+1. Install Node.js
+2. Install webpack with
 ```
 npm install -g webpack-cli
 ```
-2. Run build.bat from PowerShell
+3. Run build.bat from PowerShell
